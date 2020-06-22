@@ -32,7 +32,7 @@ from test_scripts.test_class import Test
 test = Test()
 ```
 
-We want to build a ```Chinook``` class that will allow us to easily access information in our database without having to write sql queries every time. We can do this with *attributes*.
+We want to build a ```Chinook``` class that will allow us to easily access information in our database without having to write sql queries every time. We can do this with *attributes* and *methods*.
 
 Our class should have an attribute called ```tables``` that returns a list of tables within the database.
 
