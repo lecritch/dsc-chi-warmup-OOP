@@ -73,22 +73,33 @@ tables
 
 **Much better**
 
-*Ok ok*, in the cell below, let's create an class called ```Chinook```.
+*Ok ok*, in the cell below, let's create a class called ```Chinook```.
 
 The class should have an ```__init__()``` method.
 
+>Hint: *methods* are just functions inside classes with ```self``` as the first parameter of the function.
+
+>**Example:** 
+
+>```class NameOfClass():
+    def name_of_method(self, other_paramaters_if_needed):
+        code here```
+        
+
 The ```__init__()``` method should have two paramaters:
 1. ```self```
-2. The path to the sqlite database.
+2. ```database_path```
 
 Within the ```__init__()``` method:
-1. A connection should be opened up to the database using the ```database_path```
-2. A cursor object should be created.
-3. A tables attribute should be created 
+1. A connection should be opened up to the database using the ```database_path``` variable and saved as a attribute.
+2. A cursor attribute should be created.
+3. A tables attribute should be created. 
 
-The only difference is the final ```tables``` variable should be changed to ```self.tables```.
+The code to create the  ```tables``` attribute will be almost identical to the code up above. 
 
-Since this Database class is meant to keep us from writing the same code over and over again, how can we make the ```conn``` and ```cursor``` objects available to all code within the class?
+The main difference is that the final tables variable should look like this: ```self.tables```.
+
+Since this ```Chinook``` class is meant to keep us from writing the same code over and over again, how can we make the ```conn``` and ```cursor``` objects available to all code within the class?
 
 
 ```python
@@ -107,11 +118,11 @@ data = Chinook(path)
 test.run_test(data.tables, 'tables')
 ```
 
-Let's add a *method* to our class called ```search_employees```.
+**Let's add a *method* to our class called ```search_employees```.**
 
 This method should use ```pd.read_sql``` to return a dataframe with a single row for the employee you search for.
 
-```search_employees``` should receive three parameters.
+<u>```search_employees``` should receive three parameters.</u>
 1. ```self```
 2. The firstname of an employee.
 3. The lastname of an employee.
@@ -152,11 +163,11 @@ test.run_test(data.search_employee('Jane', 'Peacock'), 'employee1')
 test.run_test(data.search_employee("Joe", "Shmo"), 'employee2')
 ```
 
-<u>There are a lot of really helpful ways OOP can be used to iteract with data.</u>
-
-In cell below describe the difference between an attribute and a method.
+In the cell below describe the difference between an attribute and a method.
 
 -------Use this markdown cell to describe the difference between attributes and methods---------
+
+<u>There are a lot of really helpful ways OOP can be used to iteract with data.</u>
 
 **If you still have time,** I've added some extra functionality to the ```Chinook``` class!
 
