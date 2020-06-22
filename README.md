@@ -395,7 +395,7 @@ class Chinook():
                                         name NOT LIKE 'sqlite_%';''')
         self.tables = [x[0] for x in tables]
         
-        # =========== NEW ADDITION HERE ==========
+        # =========== NEW ADDITION HERE ===========
         for table in self.tables:
             entire_table = pd.read_sql('''SELECT * FROM {}'''.format(table), Chinook.conn)
             setattr(self, table, entire_table)
