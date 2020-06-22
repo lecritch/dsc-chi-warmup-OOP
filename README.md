@@ -99,8 +99,6 @@ The code to create the  ```tables``` attribute will be almost identical to the c
 
 The main difference is that the final tables variable should look like this: ```self.tables```.
 
-Since this ```Chinook``` class is meant to keep us from writing the same code over and over again, how can we make the ```conn``` and ```cursor``` objects available to all code within the class?
-
 
 ```python
 # Your code here
